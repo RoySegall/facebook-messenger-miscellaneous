@@ -1,0 +1,12 @@
+{
+    "name": "roysegall/facebook-messenger-miscellaneous",
+    "description": "Implementing the miscellaneous api in PHP",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
+    },
+    "license": "mit"
+}
