@@ -21,7 +21,7 @@ class UserProfile implements MiscApiInterface {
    *
    * @var string
    */
-  protected $fields;
+  protected $fields = 'first_name,last_name';
 
   /**
    * The user ID.
@@ -66,7 +66,7 @@ class UserProfile implements MiscApiInterface {
   public function send() {
     $client = new Client();
 
-    return json_decode($client->get('https://graph.facebook.com/v2.6/' . $id, [
+    return json_decode($client->get('https://graph.facebook.com/v2.6/' . $this->uid, [
       'query' => [
         'access_token' => $this->accessToken,
         'fields' => $this->fields,

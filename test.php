@@ -6,4 +6,5 @@ $misc = new FacebookMessengerMiscellaneous\Miscellaneous();
 
 $misc
   ->userProfileApi
+  ->setAccessToken('asdas')
   ->send();
