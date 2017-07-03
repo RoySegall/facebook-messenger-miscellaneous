@@ -4,7 +4,12 @@ namespace FacebookMessengerMiscellaneous;
 
 abstract class MiscellaneousTransform implements MiscellaneousTransformInterface {
 
-  const ADDRESS = '';
+  /**
+   * The address to send the request.
+   *
+   * @var string
+   */
+  protected $address;
 
   /**
    * @var array

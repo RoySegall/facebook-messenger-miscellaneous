@@ -2,6 +2,7 @@
 
 namespace FacebookMessengerMiscellaneous\Miscellaneous;
 
+use FacebookMessengerMiscellaneous\AccessTokenTrait;
 use FacebookMessengerMiscellaneous\MiscApiInterface;
 use FacebookMessengerMiscellaneous\MiscellaneousTransform;
 

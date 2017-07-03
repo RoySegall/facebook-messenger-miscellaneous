@@ -2,6 +2,7 @@
 
 namespace FacebookMessengerMiscellaneous\Miscellaneous;
 
+use FacebookMessengerMiscellaneous\AccessTokenTrait;
 use FacebookMessengerMiscellaneous\MiscApiInterface;
 use GuzzleHttp\Client;
 
@@ -14,7 +15,7 @@ class UserProfile implements MiscApiInterface {
 
   use AccessTokenTrait;
 
-  const ADDRESS = 'https://graph.facebook.com/v2.6/me/messages';
+  protected $address = 'https://graph.facebook.com/v2.6/me/messages';
 
   /**
    * Set the fields.

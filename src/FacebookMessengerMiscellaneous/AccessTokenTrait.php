@@ -1,6 +1,6 @@
 <?php
 
-namespace FacebookMessengerMiscellaneous\Miscellaneous;
+namespace FacebookMessengerMiscellaneous;
 
 /**
  * Access token trait.
