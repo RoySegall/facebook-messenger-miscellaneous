@@ -10,11 +10,6 @@ namespace FacebookMessengerMiscellaneous;
 interface MiscApiInterface {
 
   /**
-   * The address of the end point which the handler need to interact with.
-   */
-  const ADDRESS = '';
-
-  /**
    * Set the access token.
    *
    * @param string $access_token
