@@ -4,7 +4,11 @@ namespace FacebookMessengerMiscellaneous\Miscellaneous;
 
 use FacebookMessengerMiscellaneous\AccessTokenTrait;
 use FacebookMessengerMiscellaneous\MiscApiInterface;
+use FacebookMessengerMiscellaneous\Miscellaneous\UserMenu\CallToActions;
 use FacebookMessengerMiscellaneous\Miscellaneous\UserMenu\PersistentMenu;
+use FacebookMessengerMiscellaneous\MiscellaneousTransform;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 
 /**
  * Class MessengerProfileApi
@@ -21,20 +25,39 @@ class MessengerProfileApi implements MiscApiInterface {
   /**
    * @var PersistentMenu
    */
-  protected $persistentMenu;
+  public $persistentMenu;
+
+  /**
+   * @var CallToActions
+   */
+  public $callToActions;
 
   /**
    * MessengerProfileApi constructor.
    */
   public function __construct() {
     $this->persistentMenu = new PersistentMenu();
+    $this->callToActions = new CallToActions();
   }
 
   /**
    * {@inheritdoc}
    */
-  public function send() {
+  public function send(MiscellaneousTransform $payload = NULL) {
     $this->address .= '?access_token=' . $this->accessToken;
+
+    $options = [
+      'form_params' => $payload->getData(),
+    ];
+
+    $client = new Client();
+
+    try {
+      $client->post($this->address, $options);
+    } catch (ClientException $e) {
+      var_dump($e->getResponse()->getBody()->getContents());
+    }
+
   }
 
 }

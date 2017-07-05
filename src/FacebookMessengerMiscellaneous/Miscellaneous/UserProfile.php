@@ -4,6 +4,7 @@ namespace FacebookMessengerMiscellaneous\Miscellaneous;
 
 use FacebookMessengerMiscellaneous\AccessTokenTrait;
 use FacebookMessengerMiscellaneous\MiscApiInterface;
+use FacebookMessengerMiscellaneous\MiscellaneousTransform;
 use GuzzleHttp\Client;
 
 /**
@@ -64,7 +65,7 @@ class UserProfile implements MiscApiInterface {
   /**
    * {@inheritdoc}
    */
-  public function send() {
+  public function send(MiscellaneousTransform $payload = NULL) {
     $client = new Client();
 
     return json_decode($client->get('https://graph.facebook.com/v2.6/' . $this->uid, [

@@ -22,9 +22,12 @@ interface MiscApiInterface {
   /**
    * Set the request to the api.
    *
+   * @param MiscellaneousTransform $payload
+   *   The sent payload.
+   *
    * @return mixed
    *   The decoded response.
    */
-  public function send();
+  public function send(MiscellaneousTransform $payload = NULL);
 
 }
