@@ -29,7 +29,7 @@ class PersistentMenu extends MiscellaneousTransform implements MiscellaneousTran
    *   The current object.
    */
   public function setLocale($locale) {
-    $this->data['persistent_menu']['locale'] = $locale;
+    $this->data['persistent_menu'][0]['locale'] = $locale;
 
     return $this;
   }
@@ -44,7 +44,7 @@ class PersistentMenu extends MiscellaneousTransform implements MiscellaneousTran
    *   The current object.
    */
   public function setComposerInputDisabled($composer_input_disabled) {
-    $this->data['persistent_menu']['composer_input_disabled'] = $composer_input_disabled;
+    $this->data['persistent_menu'][0]['composer_input_disabled'] = $composer_input_disabled;
 
     return $this;
   }
@@ -59,7 +59,7 @@ class PersistentMenu extends MiscellaneousTransform implements MiscellaneousTran
    *   The current object.
    */
   public function addCallToActions(CallToActions $callToActions) {
-    $this->data['persistent_menu']['call_to_actions'][] = $callToActions->getData();
+    $this->data['persistent_menu'][0]['call_to_actions'][] = $callToActions->getData();
 
     return $this;
   }
@@ -71,7 +71,7 @@ class PersistentMenu extends MiscellaneousTransform implements MiscellaneousTran
    *   The current object.
    */
   public function resetCallToActions() {
-    $this->data['persistent_menu']['call_to_actions'] = [];
+    $this->data['persistent_menu'][0]['call_to_actions'] = [];
 
     return $this;
   }
