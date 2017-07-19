@@ -5,6 +5,7 @@ namespace FacebookMessengerMiscellaneous\Miscellaneous;
 use FacebookMessengerMiscellaneous\AccessTokenTrait;
 use FacebookMessengerMiscellaneous\MiscApiInterface;
 use FacebookMessengerMiscellaneous\Miscellaneous\UserMenu\CallToActions;
+use FacebookMessengerMiscellaneous\Miscellaneous\UserMenu\GetStarted;
 use FacebookMessengerMiscellaneous\Miscellaneous\UserMenu\PersistentMenu;
 use FacebookMessengerMiscellaneous\MiscellaneousTransform;
 use GuzzleHttp\Client;
@@ -33,11 +34,17 @@ class MessengerProfileApi implements MiscApiInterface {
   public $callToActions;
 
   /**
+   * @var GetStarted
+   */
+  public $getStarted;
+
+  /**
    * MessengerProfileApi constructor.
    */
   public function __construct() {
     $this->persistentMenu = new PersistentMenu();
     $this->callToActions = new CallToActions();
+    $this->getStarted = new GetStarted();
   }
 
   /**
